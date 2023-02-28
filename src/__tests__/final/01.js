@@ -16,12 +16,14 @@ beforeEach(() => {
 })
 
 test('counter increments and decrements when the buttons are clicked', () => {
+
   const div = document.createElement('div')
   document.body.append(div)
-
   const root = createRoot(div)
+
   act(() => root.render(<Counter />))
   const [decrement, increment] = div.querySelectorAll('button')
+  
   const message = div.firstChild.querySelector('div')
 
   expect(message.textContent).toBe('Current count: 0')
